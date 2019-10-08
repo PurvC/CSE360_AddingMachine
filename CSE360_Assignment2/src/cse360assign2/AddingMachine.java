@@ -9,12 +9,14 @@ public class AddingMachine {
 
 	//local variables
 	private int total;
+	private String display;
 	
 	/**
 	 * This constructs an object of type adding machine and sets total = 0.
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		display = "0";
 	}
 	
 	/**
@@ -22,7 +24,7 @@ public class AddingMachine {
 	 * @return total of type int
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -30,7 +32,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total += value;
+		display += " + " + value;
 	}
 	
 	/**
@@ -38,7 +41,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
+		display += " - " + value;
 	}
 		
 	/**
@@ -47,13 +51,14 @@ public class AddingMachine {
 	 * @return history of operations performed as a string
 	 */
 	public String toString () {
-		return "";
+		return display;
 	}
 
 	/**
 	 * This clears all history and reset the total to 0.
 	 */
 	public void clear() {
-	
+		total = 0;
+		display = "0";
 	}
 }
